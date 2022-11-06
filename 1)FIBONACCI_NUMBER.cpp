@@ -13,18 +13,18 @@ using namespace std;
 
 /*****************KNNC******************/
 
-int solve1(int n){
+int recursion(int n){
     if(n<=1) return n;
-    else return solve1(n-1)+solve1(n-2);
+    else return recursion(n-1)+recursion(n-2);
 }
 
-int solve2(int n,vector<int>&dp){
+int memorization(int n,vector<int>&dp){
     if(n<=1) return n;
     if(dp[n]!=-1) return dp[n];
-    else return dp[n]=solve2(n-1,dp)+solve2(n-2,dp);
+    else return dp[n]=memorization(n-1,dp)+memorization(n-2,dp);
 }
 
-int solve3(int n){
+int tabulation(int n){
     if(n<=1) return n;
     int a=0,b=1,c;
     for(int i=2;i<=n;i++){
@@ -40,11 +40,11 @@ int main(int argc,char const *argv[]) {
     cin.tie(NULL);
     cout.tie(0);
     int n; cin>>n;
-    cout<<solve1(n)<<NEXT;
+    cout<<recursion(n)<<NEXT;
     vector<int>dp(n+1,-1);
     //for(auto it:dp) cout<<it<<" "; 
     //cout<<NEXT;
-    cout<<solve2(n,dp)<<NEXT;
-    cout<<solve3(n)<<NEXT;
+    cout<<memorization(n,dp)<<NEXT;
+    cout<<tabulation(n)<<NEXT;
     return 0;  
 }
