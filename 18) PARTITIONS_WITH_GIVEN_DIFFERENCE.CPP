@@ -41,6 +41,14 @@ int findways(vector<int> &arr,int tar){
 
 int countPartitions(int n, int d, vector<int> &arr) {
     // Write your code here.
+    
+   // APPROACH
+   // GIVEN S1 - S2 = D 
+   // S1 + S2 = TOTAL_SUM 
+    // TOTAL_SUM - S2 - S2 = D 
+    // TOTAL_SUM - D = 2 * S2
+    // S2 = (TOTAL_SUM - D)/2 
+    
     int totalSum = 0;
     for(auto &it:arr) totalSum += it ;
     if(totalSum - d < 0 || (totalSum-d)%2) return false ;
