@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+using namespace std ;
 
 int recursion(int ind,int n,vector<int> &price){
     if(ind == 0) return n*price[0] ;
@@ -76,4 +77,15 @@ int cutRod(vector<int> &price, int n)
         }
     }
     return prev[n] ;
+}
+
+int main()
+{
+    int testCases; cin >> testCases;
+    while(testCases--){
+    int n; cin >> n ;
+    vector<int> price(n) ;
+    for(int i=0 ; i<n ; i++) cin >> price[i] ;
+    cout << cutRod(price,n) << "\n" ;
+    }
 }
