@@ -4,6 +4,7 @@
 #include <bits/stdc++.h> 
 using namespace std ;
 
+
 int recursion(int ind,int buy,int cap,vector<int> &prices,int n){
     if(ind == n || cap == 0) return 0 ;
     if(buy){
