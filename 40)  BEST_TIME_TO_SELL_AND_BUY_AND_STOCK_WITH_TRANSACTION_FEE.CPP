@@ -1,6 +1,6 @@
 // PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/rahul-and-his-chocolates_3118974?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
 // PROBLEM LINK --- https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/
-// PROBLEM LINK --- https://practice.geeksforgeeks.org/problems/maximum-profit4657/1
+// PROBLEM LINK --- https://practice.geeksforgeeks.org/problems/buy-stock-with-transaction-fee/1?page=1&sortBy=accuracy&query=page1sortByaccuracy
 
 #include <bits/stdc++.h> 
 using namespace std ;
