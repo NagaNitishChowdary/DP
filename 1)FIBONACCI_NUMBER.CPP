@@ -1,17 +1,9 @@
+// PROBLEM LINK --- https://leetcode.com/problems/fibonacci-number/
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/nth-fibonacci-number_74156
+
 #include<bits/stdc++.h>
-
 #define LL long long int 
-#define EB emplace_back
-#define PB pop_back
-#define F first
-#define S second
-#define MP make_pair
-#define NEXT "\n"
-#define LOOP(i,a,b) for(int i=a;i<b;i++) 
-
 using namespace std;
-
-/*****************KNNC******************/
 
 int recursion(int n){
     if(n<=1) return n;
