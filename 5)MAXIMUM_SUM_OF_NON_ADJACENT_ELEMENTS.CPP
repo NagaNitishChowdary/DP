@@ -1,17 +1,8 @@
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/maximum-sum-of-non-adjacent-elements_843261?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
 #include<bits/stdc++.h>
-
 #define LL long long int 
-#define EB emplace_back
-#define PB pop_back
-#define F first
-#define S second
-#define MP make_pair
-#define NEXT "\n"
-#define LOOP(i,a,b) for(int i=a;i<b;i++) 
-
 using namespace std;
-
-/*****************KNNC******************/
 
 int memorization(vector<int>&nums,int ind,vector<int>&dp){
     if(ind==0) return nums[0];
