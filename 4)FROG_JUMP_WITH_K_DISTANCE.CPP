@@ -1,6 +1,7 @@
+// PROBLEM LINK --- https://atcoder.jp/contests/dp/tasks/dp_b
+
 #include <bits/stdc++.h> 
 using namespace std;
-
 
 int knnc(int n,vector<int>&heights,vector<int>&dp,int k){
     dp[0]=0;
