@@ -1,3 +1,5 @@
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/triangle_1229398?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,7 +19,6 @@ int memorization(vector<vector<int>>&triangle,int i,int j,int n,vector<vector<in
 }
 
 int minimumPathSum(vector<vector<int>>& triangle, int n){
-	// Write your code here.
     //int recursion1=recursion(triangle,0,0,n);
     //return recursion1;
     
