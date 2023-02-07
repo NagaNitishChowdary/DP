@@ -1,3 +1,5 @@
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/partition-a-set-into-two-subsets-such-that-the-difference-of-subset-sums-is-minimum_842494?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
 // PARTITION A SET INTO SUBSETS SUCH THAT THE DIFFERENCE OF SUBSETS SUMS IN MINIMUM
 // THIS IS BASED ON SUBSET SUM EQUAL TO TARGET TABULATION METHOD
 // AS THE TABULATION METHOD CALCULATES ALL THE O TO SUM OF ELEMENTS IN THE ARRAY'S
