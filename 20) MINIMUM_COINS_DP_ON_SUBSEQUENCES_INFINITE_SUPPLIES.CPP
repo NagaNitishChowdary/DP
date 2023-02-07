@@ -1,3 +1,5 @@
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/minimum-elements_3843091?leftPanelTab=0
+
 #include <bits/stdc++.h> 
 using namespace std ;
 
