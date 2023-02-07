@@ -30,7 +30,6 @@ int minSumPath(vector<vector<int>> &grid) {
     return memorization;
     
     // TABULATION
-    /*
     vector<vector<int>>dp(grid.size(),vector<int>(grid[0].size(),-1));
     for(int i=0;i<grid.size();i++){
         for(int j=0;j<grid[0].size();j++){
@@ -47,29 +46,6 @@ int minSumPath(vector<vector<int>> &grid) {
         }
     }
     return dp[grid.size()-1][grid[0].size()-1];
-    */
-    /*
-    // SPACE OPTIMIZATION
-    
-    vector<int>prev(grid[0].size(),0);
-    for(int i=0;i<grid.size();i++){
-        vector<int>curr(grid[0].size(),0);
-        for(int j=0;j<grid[0].size();j++){
-            if(i==0 && j==0) curr[j]=grid[i][j];
-            else{
-                int up=grid[i][j];
-                int left=grid[i][j];
-                if(i>0) up+=prev[j];
-                else up=1e+9;
-                if(j>0) left=curr[j-1];
-                else left=1e+9;
-                curr[j]=min(left,up);
-            }
-        }
-        prev=curr;
-    }
-    return prev[grid[0].size()-1]+grid[grid.size()-1,grid[0].size()-1];
-    */
 }
 
 int main()
