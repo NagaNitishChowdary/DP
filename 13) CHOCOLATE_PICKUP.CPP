@@ -1,3 +1,5 @@
+// PROBLEM LINK --- https://www.codingninjas.com/codestudio/problems/ninja-and-his-friends_3125885?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
 #include <bits/stdc++.h> 
 using namespace std;
 
