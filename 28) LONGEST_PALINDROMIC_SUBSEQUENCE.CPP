@@ -14,8 +14,8 @@ int recursion(int i,int j,string s,string t){
 int memorization(int i,int j,string &s,string &t,vector<vector<int>>&dp){
     if(i<0 || j<0) return 0 ;
     if(dp[i][j] != -1) return dp[i][j] ;
-    if(s[i] == t[j]) return 1 + memorization(i-1,j-1,s,t,dp) ;
-    return max(memorization(i-1,j,s,t,dp) , memorization(i,j-1,s,t,dp)) ;
+    if(s[i] == t[j]) return dp[i][j] = 1 + memorization(i-1,j-1,s,t,dp) ;
+    return dp[i][j] = max(memorization(i-1,j,s,t,dp) , memorization(i,j-1,s,t,dp)) ;
 }
 
 int longestPalindromeSubsequence(string s)
