@@ -1,68 +1,70 @@
 // PROBLEM LINK --- https://atcoder.jp/contests/dp/tasks/dp_b
 
-#include <bits/stdc++.h> 
+#include<bits/stdc++.h>
 using namespace std;
+template<typename T> 
+istream& operator>>(istream &istream, vector<T> &v) {for (auto &it : v)cin >> it;return istream;}
+template<typename T1, typename T2> 
+ostream& operator<<(ostream &ostream, const pair<T1, T2> &p) { return (ostream << p.first << " " << p.second); }
+template<typename T> 
+ostream& operator<<(ostream &ostream, const vector<T> &c) { for (auto &it : c) cout << it << " "; cout << endl ; return ostream; }
 
-int knnc(int n,vector<int>&heights,vector<int>&dp,int k){
-    dp[0]=0;
-    for(int i=1;i<=n;i++){
-        int mm=INT_MAX;
-        for(int j=1;j<=k;j++){
-            int knnc=INT_MAX;
-            if(i-j>=0){
-            knnc=dp[i-j]+abs(heights[i]-heights[i-j]);
-            mm=min(mm,knnc);
+/*****************KNNC******************/
+
+int recursion(int ind,int k,vector<int> &vt1){
+    if(ind == 0) return 0 ; 
+    int ans = INT_MAX ; 
+
+    for(int i=1 ; i<=k ; i++){
+        if(ind-i >= 0){
+            ans = min(ans , recursion(ind-i,k,vt1) + abs(vt1[ind] - vt1[ind-i])) ;
+        }
+    }
+
+    return ans ; 
+}
+
+int memoization(int ind,int k,vector<int> &vt1,vector<int> &dp){
+    if(ind == 0) return 0 ; 
+    int ans = INT_MAX ; 
+    if(dp[ind] != -1) return dp[ind] ; 
+    for(int i=1 ; i<=k ; i++){
+        if(ind-i >= 0){
+            ans = min(ans , memoization(ind-i,k,vt1,dp) + abs(vt1[ind] - vt1[ind-i])) ;
+        }
+    }
+
+    return dp[ind] = ans ; 
+}
+
+
+void solve(){
+    int n,k ; cin >> n >> k ;
+    vector<int> vt1(n) ; cin >> vt1 ; 
+
+    // RECURSION
+    // cout << recursion(n-1,k,vt1) << endl ;
+
+    // MEMOIZATION 
+    // vector<int> dp(n,-1) ; 
+    // cout << memoization(n-1,k,vt1,dp) << endl ; 
+
+    // TABULATION 
+    vector<int> dp(n,0) ; dp[0] = 0 ;
+    for(int ind=1 ; ind<n ; ind++){
+        int ans = INT_MAX ;  
+        for(int i=1 ; i<=k ; i++){
+            if(ind-i >= 0){
+                ans = min(ans , dp[ind-i] + abs(vt1[ind] - vt1[ind-i])) ;
             }
-        }    
-        dp[i]=mm;
+        }
+
+        dp[ind] = ans ; 
     }
-    return dp[n-1];
+    cout << dp[n-1] << endl ; 
 }
 
-int frogJump(int n, vector<int> &heights,int k)
-{
-    // Write your code here.
-    //vector<int>dp(n,-1);
-    vector<int>dp(n,-1);
-    return knnc(n,heights,dp,k);
-}
-
-
-int recursivefrogJump(int n,vector<int>&heights,int k)
-{
-    if(n==0) return 0;
-    int ans=INT_MAX;
-    for(int i=1;i<=k;i++){
-        int knnc=INT_MAX;
-        if(n-i>=0) knnc=recursivefrogJump(n-i,heights,k)+abs(heights[n]-heights[n-i]);
-        ans=min(knnc,ans);
-    }
-    return ans;
-}
-
-
-int memorizationfrogJump(int n,vector<int>&heights,vector<int>&dp,int k){
-    if(n==0) return 0;
-    int ans=INT_MAX;
-    if(dp[n]!=-1) return dp[n];
-    for(int i=1;i<=k;i++){
-    int knnc=INT_MAX;
-    if(n>=i) knnc=memorizationfrogJump(n-i,heights,dp,k)+abs(heights[n]-heights[n-i]);
-    ans=min(knnc,ans);
-    }
-    return dp[n]=ans;
-}
-
-
-int main()
-{
-    int n; cin>>n;
-    int k; cin>>k;
-    vector<int>heights(n);
-    for(int i=0;i<n;i++) cin>>heights[i];
-    cout<< frogJump(n,heights,k) <<"\n";
-    cout<< recursivefrogJump(n-1,heights,k) << "\n";
-    vector<int>dp(n,-1);
-    cout<< memorizationfrogJump(n-1,heights,dp,k) << "\n";
-    return 0;
-}
+int main() {
+    solve();
+    return 0;  
+} 
